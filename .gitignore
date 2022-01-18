@@ -18,6 +18,10 @@
 /package/openwrt-packages
 key-build*
 *.orig
+*.db
+*.db-shm
+*.db-wal
+*.opendb
 *.rej
 *~
 .#*
