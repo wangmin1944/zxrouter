@@ -72,8 +72,8 @@ platform_do_upgrade() {
 	engenius,eap2200 |\
 	glinet,gl-ap1300 |\
 	luma,wrtq-329acn |\
-	zbt,z4019 |\
 	mobipromo,cm520-79f |\
+	zbt,z4019 |\
 	qxwlan,e2600ac-c2)
 		nand_do_upgrade "$1"
 		;;
