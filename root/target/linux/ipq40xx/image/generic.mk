@@ -100,21 +100,6 @@ define Device/8dev_habanero-dvk
 endef
 TARGET_DEVICES += 8dev_habanero-dvk
 
-define Device/8dev_jalapeno-common
-	$(call Device/FitImage)
-	$(call Device/UbiFit)
-	BLOCKSIZE := 128k
-	PAGESIZE := 2048
-	SOC := qcom-ipq4018
-endef
-
-define Device/8dev_jalapeno
-	$(call Device/8dev_jalapeno-common)
-	DEVICE_VENDOR := 8devices
-	DEVICE_MODEL := Jalapeno
-endef
-TARGET_DEVICES += 8dev_jalapeno
-
 define Device/pangu_l1000
 	$(call Device/FitImage)
 	$(call Device/UbiFit)
@@ -129,6 +114,34 @@ define Device/pangu_l1000
 	DEVICE_PACKAGES := ipq-wifi-pangu_l1000
 endef
 TARGET_DEVICES += pangu_l1000
+
+define Device/zbt_z4019
+	$(call Device/FitImage)
+	$(call Device/UbiFit)
+	DEVICE_VENDOR := ZBT
+	DEVICE_MODEL := Z4019
+	SOC := qcom-ipq4019
+	BLOCKSIZE := 128k
+	PAGESIZE := 2048
+	DEVICE_PACKAGES := -kmod-ath10k-ct kmod-ath10k-ct-smallbuffers
+endef
+TARGET_DEVICES += zbt_z4019
+
+
+define Device/8dev_jalapeno-common
+	$(call Device/FitImage)
+	$(call Device/UbiFit)
+	BLOCKSIZE := 128k
+	PAGESIZE := 2048
+	SOC := qcom-ipq4018
+endef
+
+define Device/8dev_jalapeno
+	$(call Device/8dev_jalapeno-common)
+	DEVICE_VENDOR := 8devices
+	DEVICE_MODEL := Jalapeno
+endef
+TARGET_DEVICES += 8dev_jalapeno
 
 define Device/alfa-network_ap120c-ac
 	$(call Device/FitImage)
@@ -498,18 +511,6 @@ define Device/glinet_gl-ap1300
 	DEVICE_PACKAGES := ipq-wifi-glinet_gl-ap1300
 endef
 TARGET_DEVICES += glinet_gl-ap1300
-
-define Device/zbt_z4019
-	$(call Device/FitImage)
-	$(call Device/UbiFit)
-	DEVICE_VENDOR := ZBT
-	DEVICE_MODEL := Z4019
-	SOC := qcom-ipq4019
-	BLOCKSIZE := 128k
-	PAGESIZE := 2048
-	DEVICE_PACKAGES := -kmod-ath10k-ct kmod-ath10k-ct-smallbuffers
-endef
-TARGET_DEVICES += zbt_z4019
 
 define Device/glinet_gl-b1300
 	$(call Device/FitImage)

@@ -59,8 +59,9 @@ platform_do_upgrade() {
 	case "$(board_name)" in
 	8dev,jalapeno |\
 	aruba,ap-303 |\
-	pangu,l1000 |\
 	aruba,ap-303h |\
+	pangu,l1000 |\
+	zbt,z4019 |\
 	aruba,ap-365 |\
 	avm,fritzbox-7530 |\
 	avm,fritzrepeater-1200 |\
@@ -72,7 +73,6 @@ platform_do_upgrade() {
 	engenius,eap2200 |\
 	glinet,gl-ap1300 |\
 	luma,wrtq-329acn |\
-	zbt,z4019 |\
 	mobipromo,cm520-79f |\
 	qxwlan,e2600ac-c2)
 		nand_do_upgrade "$1"
